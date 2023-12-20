@@ -11,12 +11,13 @@ create_users_table_query = '''
                 Password        VARCHAR(100) NOT NULL,
                 Address         VARCHAR(255) NOT NULL,
                 PhoneNumber     VARCHAR(15) NOT NULL,
-                RegistrationDate DATE NOT NULL
+                RegistrationDate DATE NOT NULL,
+                is_admin        BOOLEAN DEFAULT FALSE
 );
 '''
 insert_users = '''
-INSERT INTO Users (FirstName, LastName, Email, Password, Address, PhoneNumber, RegistrationDate)
-VALUES (%s, %s, %s, %s, %s, %s, %s) 
+INSERT INTO Users (FirstName, LastName, Email, Password, Address, PhoneNumber, RegistrationDate ,is_admin)
+VALUES (%s, %s, %s, %s, %s, %s, %s,%s) 
 RETURNING *
 ;
 '''
@@ -82,7 +83,7 @@ create_adoptions_table_query = '''
                 PRIMARY KEY (UserID, TreeID)
             );
 '''
-# No two Persons Can adopt same tree
+# Can two Persons Can adopt same tree ??
 # No person can adopt same tree twice\
     
 insert_adoptions = '''  
