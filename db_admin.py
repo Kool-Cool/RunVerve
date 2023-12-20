@@ -27,7 +27,7 @@ with connection.cursor() as cur:
     table_names = cur.fetchall()
     for char in table_names:
         table_list.append(char[0])
-table_list = table_list[1::]
+
 
 
 
@@ -36,4 +36,3 @@ table_list = table_list[1::]
 df_dict = {}
 for table_name in table_list:
     df_dict[f"{table_name}_df"] = load_table(table_name)   
-

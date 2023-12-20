@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Tree Adoption Dashboard
+{% endblock %}
+
+{% block body %}
+<section class="dashboard">
+    <div class="item">
+        <h2>Total Donation</h2>
+        <span>{{ total_donation }}</span>
+    </div>
+    <div class="item">
+        <h2>Highest Donation</h2>
+        <span>{{ highest_donation }}</span>
+    </div>
+    <div class="item">
+        <h2>Total Number of Donors</h2>
+        <span>{{ total_donors }}</span>
+    </div>
+    <div class="item">
+        <h2>Most Contributor</h2>
+        <img src="{{ url_for('static', filename='top_10_contributors.png') }}" alt="Top 10 Contributors">
+    </div>
+    <div class="item">
+        <h2>Location Where Most Trees Were Planted</h2>
+        <img src="{{ url_for('static', filename='tree_planting_locations.png') }}" alt="Tree Planting Locations">
+    </div>
+    <div class="item">
+        <h2>Health % of Trees</h2>
+        <img src="{{ url_for('static', filename='health_status_distribution.png') }}" alt="Health Status Distribution">
+    </div>
+</section>
+{% endblock %}

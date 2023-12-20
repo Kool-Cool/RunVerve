@@ -1,15 +1,22 @@
-from flask import Flask , request , jsonify , json
+from flask import Flask , request , jsonify , json , render_template
 from db_conn import connection
+import db_analytics
 import db_info
 import psycopg2
 
 app = Flask(__name__)
 
-@app.get("/")
+
+@app.route("/", methods = ["POST" , "GET"])
 def home():
-    return('Welcome to RunVerse \nLets help ourself by Adopting Tree')
+    # return('Welcome to RunVerse \nLets help ourself by Adopting Tree')
+    return render_template("home.html")
 
 
+@app.route("/login", methods = ["POST" , "GET"])
+def login():
+    # return('Welcome to RunVerse \nLets help ourself by Adopting Tree')
+    return render_template("login.html")
 
 """  
 while the POST method does not inherently provide encryption, 
@@ -125,6 +132,14 @@ def create_adoptions():
 
 
 #For Dashbord
-@app.route("/dashbord" , methods = ["POST" , "GET"])
+@app.route("/dashboard" , methods = ["POST" , "GET"])
 def dashbord():
-    return "Here one can see analytical dashbord"
+    # return "Here one can see analytical dashbord"
+    total_donation = db_analytics.total_donation
+    highest_donation = db_analytics.highest_donation
+    total_donors = db_analytics.total_donors
+    # Render the template and pass the metrics to it
+    return render_template('dashboard.html', 
+                           total_donation=total_donation,
+                           highest_donation=highest_donation, 
+                           total_donors=total_donors)
