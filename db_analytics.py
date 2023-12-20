@@ -58,7 +58,7 @@ adoptions_df['donation_amount'] = pd.to_numeric(adoptions_df['donation_amount'],
 
 
 # Create the directory if it doesn't exist
-os.makedirs('extra', exist_ok=True)
+os.makedirs('static', exist_ok=True)
 
 # Q1) Total amount of Donation (numerical)
 total_donation = adoptions_df['donation_amount'].sum()
@@ -78,7 +78,7 @@ most_contributors.plot(kind='bar', figsize=(10,6))
 plt.title('Top 10 Contributors')
 plt.xlabel('User ID')
 plt.ylabel('Total Donations')
-plt.savefig('extra/top_10_contributors.png')
+plt.savefig('static/top_10_contributors.png')
 plt.close()
 
 # Q5) Location where most trees were planted (pie chart)
@@ -86,7 +86,7 @@ tree_locations = trees_df['location'].value_counts()
 tree_locations.plot(kind='pie', figsize=(10,6), autopct='%1.1f%%')
 plt.title('Tree Planting Locations')
 plt.ylabel('')  # This hides the 'location' ylabel
-plt.savefig('extra/tree_planting_locations.png')
+plt.savefig('static/tree_planting_locations.png')
 plt.close()
 
 # Q6) Health % of trees (pie chart)
@@ -94,7 +94,7 @@ health_percentage = trees_df['health_status'].value_counts(normalize=True)
 health_percentage.plot(kind='pie', figsize=(10,6), autopct='%1.1f%%')
 plt.title('Health Status Distribution')
 plt.ylabel('')  # This hides the 'health_status' ylabel
-plt.savefig('extra/health_status_distribution.png')
+plt.savefig('static/health_status_distribution.png')
 plt.close()
-
-# print("done")
+# print(health_percentage)
+print("done")

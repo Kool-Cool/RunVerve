@@ -36,3 +36,4 @@ with connection.cursor() as cur:
 df_dict = {}
 for table_name in table_list:
     df_dict[f"{table_name}_df"] = load_table(table_name)   
+print(df_dict)
