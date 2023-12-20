@@ -122,4 +122,9 @@ def create_adoptions():
     else:
         
         return "API END FOR adoptions TABLE"
-    
+
+
+#For Dashbord
+@app.route("/dashbord" , methods = ["POST" , "GET"])
+def dashbord():
+    return "Here one can see analytical dashbord"
