@@ -11,6 +11,12 @@ def home():
 
 
 
+"""  
+while the POST method does not inherently provide encryption, 
+using HTTPS for transmission and implementing encryption at the server level can 
+help ensure data security from the web source to the backend database
+"""
+
 # For Users
 @app.route("/api/users" , methods = ["POST" , "GET"])
 def create_user():
