@@ -50,7 +50,7 @@ def create_user():
                     connection.rollback()
                     return {"error": str(e)}
     else:
-        return "API END FOR USER TABLE"
+        return "API END FOR USER TABLE    USE POST METHOD ON API TESTING"
 
 
 #For Species
@@ -76,7 +76,7 @@ def create_species():
                     connection.rollback()
                     return {"error": str(e)}
     else:
-        return "API END FOR species TABLE"
+        return "API END FOR species TABLE     USE POST METHOD ON API TESTING"
     
 
 #For Trees
@@ -102,7 +102,7 @@ def create_trees():
                     connection.rollback()
                     return {"error": str(e)}
     else:
-        return "API END FOR trees TABLE"
+        return "API END FOR trees TABLE     USE POST METHOD ON API TESTING"
 
 
 
@@ -131,7 +131,7 @@ def create_adoptions():
                     return {"error": str(e)}
     else:
         
-        return "API END FOR adoptions TABLE"
+        return "API END FOR adoptions TABLE     USE POST METHOD ON API TESTING"
 
 
 #For Dashbord
@@ -141,7 +141,7 @@ def dashbord():
     total_donation = db_analytics.total_donation
     highest_donation = db_analytics.highest_donation
     total_donors = db_analytics.total_donors
-    # Render the template and pass the metrics to it
+
     return render_template('dashboard.html', 
                            total_donation=total_donation,
                            highest_donation=highest_donation, 
