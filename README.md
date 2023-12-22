@@ -1,7 +1,3 @@
-Certainly! Below is a basic template for your GitHub repository documentation. Feel free to customize it further based on your specific needs and details about your project. 
-
----
-
 # RunVerve
 
 ## Overview
