@@ -30,6 +30,9 @@ help ensure data security from the web source to the backend database
 # For Users
 @app.route("/api/users" , methods = ["POST" , "GET"])
 def create_user():
+    '''
+    Need some password encryption while storing in DataBase
+    '''
     if request.method == 'POST':
         data = request.get_json() #python dict
         name = f"{data['FirstName']} {data['LastName']}"
